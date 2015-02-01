@@ -1,6 +1,14 @@
 package com.prabin.practice;
 
+import com.google.common.annotations.Beta;
+import com.google.common.base.Objects;
+
 public class User {
+
+	/*
+	 * Can use fluent builder to generate it Google guave to generate hashcode
+	 * and equals
+	 */
 	private final String firstName;
 	private final String lastName;
 	private final int age;
@@ -33,6 +41,25 @@ public class User {
 
 	public String getAddress() {
 		return address;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(firstName, lastName, age, phone, address);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Beta) {
+			final User other = (User) obj;
+			return Objects.equal(firstName, other.firstName)
+					&& Objects.equal(lastName, other.lastName)
+					&& age == other.age // special handling for primitives
+					&& Objects.equal(phone, other.phone)
+					&& Objects.equal(address, other.address);
+		} else {
+			return false;
+		}
 	}
 
 	public static class UserBuilder {
