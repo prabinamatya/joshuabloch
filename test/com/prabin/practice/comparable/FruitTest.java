@@ -33,6 +33,14 @@ public class FruitTest {
 			System.out.println(f.getQuantity());
 		}
 
+		Arrays.sort(far, Fruit.FruitComparator);
+
+		// asserting for ascending by fruitName
+		Assert.assertEquals("apple", far[0].getFruitName());
+		for (Fruit f : far) {
+			System.out.println(f.getFruitName());
+		}
+
 	}
 
 }

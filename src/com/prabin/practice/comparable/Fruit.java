@@ -1,5 +1,7 @@
 package com.prabin.practice.comparable;
 
+import java.util.Comparator;
+
 public class Fruit implements Comparable<Fruit> {
 	private String fruitName;
 	private String fruitDesc;
@@ -42,5 +44,17 @@ public class Fruit implements Comparable<Fruit> {
 	public int compareTo(Fruit compareFruit) {
 		return (this.getQuantity() - compareFruit.getQuantity());
 	}
+
+	public static Comparator<Fruit> FruitComparator = new Comparator<Fruit>() {
+
+		@Override
+		public int compare(Fruit fruit1, Fruit fruit2) {
+			String fruitName1 = fruit1.getFruitName();
+			String fruitName2 = fruit2.getFruitName();
+
+			return fruitName1.compareTo(fruitName2);
+		}
+
+	};
 
 }
