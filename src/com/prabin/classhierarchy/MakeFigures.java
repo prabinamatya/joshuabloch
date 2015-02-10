@@ -9,5 +9,8 @@ public class MakeFigures {
 		Figure circle = new Circle(6.0);
 		System.out.println("circle Area = " + circle.area());
 
+		Figure square = new Square(7.0);
+		System.out.println("square  Area= " + square.area());
+
 	}
 }
