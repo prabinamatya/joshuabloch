@@ -25,7 +25,7 @@ public class RawTest {
 		Set s1 = new HashSet();
 		s1.addAll(Arrays.asList("a", new Integer(1), "c"));
 		Set s2 = new HashSet();
-		s2.addAll(Arrays.asList("d", "b", "e"));
+		s2.addAll(Arrays.asList("d", "b", "e", new Integer(5)));
 		int actual = Raw.rawNumElementsInCommon(s1, s2);
 		assertEquals(1, actual);
 	}
