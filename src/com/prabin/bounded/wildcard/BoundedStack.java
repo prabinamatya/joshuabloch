@@ -49,6 +49,8 @@ public class BoundedStack<E> {
 	 * Collection<? extends Thing>
 	 * 
 	 * 2. Consumer: Add things to the collection Collection<? super Thing>
+	 Comparables and comparators are consumers
+	 
 	 */
 
 	//going through the collection
