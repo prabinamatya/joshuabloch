@@ -6,7 +6,6 @@ public class PayrollDayTest {
 
 	@Test
 	public void test() {
-		
 	}
 
 }
