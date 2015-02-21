@@ -8,6 +8,7 @@ public class OperationTest {
 	public void test() {
 		for(Operation op : Operation.values()) {
 			System.out.println("for op " + op + " value = "+ op.apply(2, 6));
+			
 		}
 	
 	}

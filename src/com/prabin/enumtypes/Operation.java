@@ -1,5 +1,8 @@
 package com.prabin.enumtypes;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Operation {
 	PLUS("+") {
 		@Override
@@ -34,5 +37,16 @@ public enum Operation {
 	}
 	
 	abstract double apply(double x, double y);
+	
+	private static final Map<String, Operation> stringToEnum = new HashMap<>();
+	static {
+		for(Operation op : values()) {
+			stringToEnum.put(op.toString(), op);
+		}
+	}
+	
+	public static Operation fromString(String symbol) {
+		return stringToEnum.get(symbol);
+	}
 	
 }
