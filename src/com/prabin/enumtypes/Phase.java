@@ -4,11 +4,12 @@ import java.util.EnumMap;
 import java.util.Map;
 
 public enum Phase {
-	SOLID, LIQUID, GAS;
+	SOLID, LIQUID, GAS, PLASMA;
 	
 	public enum Transition {
 		MELT(SOLID, LIQUID), FREEZE(LIQUID, SOLID), BOIL(LIQUID, GAS), 
-		CONDENSE(GAS, LIQUID), SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID);
+		CONDENSE(GAS, LIQUID), SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID),
+		IONIZE(GAS, PLASMA), DEIONIZE(PLASMA, GAS);
 		
 		private final Phase src;
 		private final Phase dest;
@@ -33,8 +34,9 @@ public enum Phase {
 		public static void main(String... args) {
 			for(Phase src : Phase.values()) {
 				for(Phase dest: Phase.values()) {
-					if(src != dest) {
-						System.out.printf("%s to %s : %s %n", src, dest, Transition.from(src, dest));
+					Transition from = Transition.from(src, dest);
+					if(src != dest && from != null) {
+						System.out.printf("%s to %s : %s %n", src, dest, from);
 					}
 				}
 			}
