@@ -5,7 +5,8 @@ import java.util.Map;
 
 public enum Phase {
 	SOLID, LIQUID, GAS, PLASMA;
-	
+	//You cannot write an extensible enum type, you can emulate it by writing an interface to go with a basic enum
+	//type that implements the interface
 	public enum Transition {
 		MELT(SOLID, LIQUID), FREEZE(LIQUID, SOLID), BOIL(LIQUID, GAS), 
 		CONDENSE(GAS, LIQUID), SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID),
