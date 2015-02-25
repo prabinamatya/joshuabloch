@@ -8,5 +8,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Test {
-//way of annotating test methods. Only on parameter less methods
+//way of annotating test methods. Only on parameter less methods. Somehow the change didn't show up in github.com
 }
