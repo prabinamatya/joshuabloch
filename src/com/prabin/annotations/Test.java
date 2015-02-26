@@ -9,4 +9,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Test {
 //way of annotating test methods. Only on parameter less methods. Somehow the change didn't show up in github.com
+//consistently use the override annotation
 }
