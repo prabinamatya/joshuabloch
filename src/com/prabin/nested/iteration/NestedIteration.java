@@ -20,6 +20,11 @@ class Card {
 		this.suit = suit;
 		this.rank = rank;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
 }
 
 public class NestedIteration {
@@ -34,5 +39,13 @@ public class NestedIteration {
 				deck.add(new Card(suit, rank));
 			}
 		}
+		
+		for(int i = 0; i < suits.size(); i++) {
+			for(int j = 0; j < ranks.size(); j++) {
+				System.out.println("suit = " + suits.get(i) + " rank= " + ranks.get(j));
+			}
+		}
+		
+		
 	}
 }
