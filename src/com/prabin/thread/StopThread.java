@@ -6,21 +6,47 @@ public class StopThread {
 	
 	public static boolean stopRequested;
 	
-	public static void main(String... args ) throws InterruptedException {
+//	public static void main(String... args ) throws InterruptedException {
+//		Thread backGroundThread = new Thread(new Runnable() {
+//			public void run() {
+//				int i = 0;
+//				while(!stopRequested) {
+//					i++;
+//					System.out.println(i);
+//				}
+//			}
+//		});
+//		
+//		backGroundThread.start();
+//		
+//		TimeUnit.SECONDS.sleep(1);
+//		stopRequested = true;
+//	}
+	
+	private static synchronized void requestStop() {
+		stopRequested = true;
+	}
+	
+	private static synchronized boolean stopRequested() {
+		return stopRequested;
+	}
+
+	public static void main(String... args) throws InterruptedException {
 		Thread backGroundThread = new Thread(new Runnable() {
+
+			@Override
 			public void run() {
 				int i = 0;
-				while(!stopRequested) {
+				while(!stopRequested()) {
 					i++;
 					System.out.println(i);
 				}
 			}
+			
 		});
-		
 		backGroundThread.start();
 		
 		TimeUnit.SECONDS.sleep(1);
-		stopRequested = true;
+		requestStop();
 	}
-
 }
