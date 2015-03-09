@@ -35,6 +35,16 @@ public class Initialization {
 		}
 		return result;
 	}
+	
+	private volatile FieldType field5;
+	
+	private FieldType getField5() {
+		FieldType result = field5;
+		if(result == null) {
+			field5 = result = computeFieldValue();
+		}
+		return result;
+	}
 
 	private static FieldType computeFieldValue() {
 		return new FieldType();
