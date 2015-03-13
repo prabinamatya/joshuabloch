@@ -3,8 +3,11 @@ package com.prabin.multithreading;
 public class AppImpRun {
 	public static void main(String... args) {
 		Thread thread1 = new Thread(new Runner());
+		Thread thread2 = new Thread(new Runner());
 		System.out.println("thread1 start");
 		thread1.start();
+		System.out.println("thread2 start");
+		thread2.start();
 	}
 }
 
