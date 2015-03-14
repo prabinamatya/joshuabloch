@@ -3,6 +3,11 @@ package com.prabin.multithreading;
 public class Worker {
 	private int count = 0;
 	
+	public static void main(String... args) {
+		Worker worker = new Worker();
+		worker.run();
+	}
+	
 	public synchronized void increment() {
 		count++;
 	}
@@ -12,7 +17,7 @@ public class Worker {
 			
 			@Override
 			public void run() {
-				for(int i = 0; i < 10; i++) {
+				for(int i = 0; i < 10000; i++) {
 					increment();
 				}
 			}
@@ -23,7 +28,7 @@ public class Worker {
 			
 			@Override
 			public void run() {
-				for(int i = 0; i < 10; i++) {
+				for(int i = 0; i < 10000; i++) {
 					increment();
 				}
 			}
