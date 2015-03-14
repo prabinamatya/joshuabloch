@@ -14,6 +14,7 @@ public class TerminateOtherThread {
 
 }
 
+//Volatile keyword is used to communicate between threads using flags.
 class Processor extends Thread {
 	private volatile boolean running = true;
 	
