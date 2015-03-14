@@ -2,12 +2,14 @@ package com.prabin.multithreading;
 
 public class Worker {
 	private int count = 0;
+	//no volatile. It just guarantees that all threads see the current state 
 	
 	public static void main(String... args) {
 		Worker worker = new Worker();
 		worker.run();
 	}
 	
+	//Only one thread can acquire intrinsic lock at a time. Second thread will have to wait
 	public synchronized void increment() {
 		count++;
 	}
@@ -22,7 +24,6 @@ public class Worker {
 				}
 			}
 		});
-		thread1.start();
 		
 		Thread thread2 = new Thread(new Runnable() {
 			
@@ -33,8 +34,11 @@ public class Worker {
 				}
 			}
 		});
+		
+		thread1.start();
 		thread2.start();
 		
+		//wait for the threads to finish
 		try {
 			thread1.join();
 			thread2.join();
