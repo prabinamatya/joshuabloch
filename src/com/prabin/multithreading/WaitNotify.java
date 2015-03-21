@@ -2,6 +2,7 @@ package com.prabin.multithreading;
 
 import java.util.Scanner;
 
+// Instead of synchronized, wait and notify use ReentrantLock 
 public class WaitNotify {
 	public static void main(String[] args) throws InterruptedException {
 		final ProcessWaitNotify processor = new ProcessWaitNotify();
