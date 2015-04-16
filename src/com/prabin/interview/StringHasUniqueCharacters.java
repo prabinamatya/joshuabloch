@@ -17,5 +17,15 @@ public class StringHasUniqueCharacters {
 		}
 		return true;
 	}
+	
+	public String reverseString(String stringVal) {
+		char[] charArray = stringVal.toCharArray();
+		StringBuilder sb = new StringBuilder();
+		int length = stringVal.length()-1;
+		for(int i = length; i >= 0; i--) {
+			sb.append(charArray[i]);
+		}
+		return String.valueOf(sb);
+	}
 
 }

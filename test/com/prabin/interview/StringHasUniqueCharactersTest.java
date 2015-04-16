@@ -18,4 +18,10 @@ public class StringHasUniqueCharactersTest {
 		boolean actual = testObject.hasUnique("abcdef");
 		assertEquals(true, actual);
 	}
+	
+	@Test
+	public void reverseStringTest() {
+		String actual = testObject.reverseString("abcdef");
+		assertEquals("fedcba", actual);
+	}
 }
