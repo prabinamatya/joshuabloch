@@ -17,6 +17,7 @@ public class StringStartsWithUppercaseTest {
 	public void returnsFalseWhenTestingSmallLetters() {
 		assertEquals(Boolean.FALSE, testObject.startsWithUpperCase("z"));
 		assertEquals(Boolean.FALSE, testObject.startsWithUpperCase("a"));
+		assertEquals(Boolean.FALSE, testObject.startsWithUpperCase("_"));
 	}
 
 }
