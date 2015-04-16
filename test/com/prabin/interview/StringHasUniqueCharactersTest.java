@@ -24,4 +24,10 @@ public class StringHasUniqueCharactersTest {
 		String actual = testObject.reverseString("abcdef");
 		assertEquals("fedcba", actual);
 	}
+	
+	@Test
+	public void permutationStringTest() {
+		boolean actual = testObject.permutationString("abcdef" , "bcdafe");
+		assertEquals(true, actual);
+	}
 }
