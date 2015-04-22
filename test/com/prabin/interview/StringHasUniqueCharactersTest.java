@@ -30,4 +30,10 @@ public class StringHasUniqueCharactersTest {
 		boolean actual = testObject.permutationString("abcdef" , "bcdafe");
 		assertEquals(true, actual);
 	}
+	
+	@Test
+	public void compressStringsTest() throws Exception {
+		String actual = testObject.compressStrings("aaabbbbccdd");
+		assertEquals("a3b4c2d2", actual);
+	}
 }
